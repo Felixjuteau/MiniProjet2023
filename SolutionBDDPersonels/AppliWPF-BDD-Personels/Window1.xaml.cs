@@ -33,21 +33,20 @@ namespace AppliWPF_BDD_Personels
         {
             InitializeComponent();//lance l'application
             bddPersonels = new CBDDPersonels1();
-            Trombinoscope();
+            List<Personnel> personnels = bddPersonels.GetAllPersonnels();
+            Trombinoscope(personnels);
             ComboBox();
             BackgroundTask();
-        }
+            }
 
-        private void Trombinoscope()//permet d'afficher le trombinoscope
+        private void Trombinoscope(List<Personnel> personnels)//permet d'afficher le trombinoscope
         {
             try
             {
-                List<Personnel> personnels = bddPersonels.GetAllPersonnels();//recupere la liste des personnel
+                ListBoxTrom.Items.Clear();
                 foreach (Personnel personnel in personnels)
                 {
-
                     ListBoxTrom.Items.Add(stack(personnel));//pour chaques personnel, ajouté dans la listbox par une methode stack
-
                 }
             }
             catch (Exception ex) { throw ex; }
@@ -77,11 +76,11 @@ namespace AppliWPF_BDD_Personels
         }
         public void LoadImage(byte[] imageData, Image icon)//methode qui change le type d'une image
         {
-            BitmapImage bitmapImage = new BitmapImage(); //voir ce que c'est
+            BitmapImage bitmapImage = new BitmapImage(); //crée une image utilisable par l'interface
 
             try
             {
-                using (MemoryStream memoryStream = new MemoryStream(imageData))
+                using (MemoryStream memoryStream = new MemoryStream(imageData))//
                 {
                     bitmapImage.BeginInit();
                     bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
@@ -218,8 +217,10 @@ namespace AppliWPF_BDD_Personels
                     }
                 }
                 bddPersonels.AjouterPersonnel(personnel);
+                
                 ListBoxTrom.Items.Clear();
-                Trombinoscope();
+                List<Personnel> personnels = bddPersonels.GetAllPersonnels();
+                Trombinoscope(personnels);
             }
             catch (Exception ex)
             {
@@ -244,7 +245,8 @@ namespace AppliWPF_BDD_Personels
                     personnel.Id = Convert.ToInt32(TBId.Text);
                     bddPersonels.ModifPersonel(personnel);
                     ListBoxTrom.Items.Clear();
-                    Trombinoscope();
+                    List<Personnel> personnels = bddPersonels.GetAllPersonnels();
+                    Trombinoscope(personnels);
                 }
                 else
                 {
@@ -283,7 +285,8 @@ namespace AppliWPF_BDD_Personels
                     int Id = Convert.ToInt32(TBId.Text);
                     bddPersonels.SuppPersonnel(Id);
                     ListBoxTrom.Items.Clear();
-                    Trombinoscope();
+                    List<Personnel> personnels = bddPersonels.GetAllPersonnels();
+                    Trombinoscope(personnels);
                 }
             }
             catch (Exception ex) { throw ex; }
