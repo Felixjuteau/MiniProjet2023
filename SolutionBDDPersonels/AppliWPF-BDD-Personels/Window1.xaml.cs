@@ -326,6 +326,7 @@ namespace AppliWPF_BDD_Personels
             {
                 BtAjouter.IsEnabled = false;
             }
+            
         }
     }
 }
