@@ -1,0 +1,28 @@
+﻿<Window x:Class="AppliWPF_BDD_Personels.GestionFonctionsServices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppliWPF_BDD_Personels"
+        mc:Ignorable="d"
+        Title="GestionFonctionsServices" Height="500" Width="500" MaxHeight="500" MaxWidth="500">
+    <Grid>
+        <Label x:Name="LblNomSorF" Content="Nom du Service ou de la Fonction" HorizontalAlignment="Left" Height="30" Margin="216,86,0,0" VerticalAlignment="Top" Width="202" RenderTransformOrigin="3.131,-0.419"/>
+        <Button x:Name="BtnRetour" Content="Retour" HorizontalAlignment="Left" Height="30" Margin="335,407,0,0" VerticalAlignment="Top" Width="106" Click="Retour"/>
+        <ListBox x:Name="LbServices" HorizontalAlignment="Left" Height="180" Margin="25,73,0,0" VerticalAlignment="Top" Width="125" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="LbFonctions" HorizontalAlignment="Left" Height="180" Margin="25,253,0,0" VerticalAlignment="Top" Width="125" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="BtnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="35" Margin="216,182,0,0" VerticalAlignment="Top" Width="78"/>
+        <Button x:Name="BtnModifier" Content="Modifier" HorizontalAlignment="Left" Height="35" Margin="335,182,0,0" VerticalAlignment="Top" Width="83"/>
+        <StackPanel>
+            <Menu x:Name="MenuNouveau" Height="24" Margin="0,0,0,460">
+                <MenuItem x:Name="MenuINouveau" Header="Nouveau">
+                    <MenuItem x:Name="AjouterService" Click="ouvrirAjservices" Header="Ajouter un service"/>
+                    <MenuItem x:Name="AjouterFonction" Click="ouvrirAjfonctions" Header="Ajouter une fonction"/>
+                </MenuItem>
+
+            </Menu>
+        </StackPanel>
+        <TextBox x:Name="TxtBNomSorF" HorizontalAlignment="Left" Height="29" Margin="216,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="AppliWPF_BDD_Personels.SaisieIncorrectLoginMdp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppliWPF_BDD_Personels"
+        mc:Ignorable="d"
+        Title="SaisieIncorrectLoginMdp" Height="190" Width="400" MaxHeight="190" MaxWidth="400">
+    <Grid>
+        <Label Content="Le nom d'utilisateur ou le mot de passe est incorect." HorizontalAlignment="Left" Height="26" Margin="73,35,0,0" VerticalAlignment="Top" Width="286"/>
+        <Button Content="OK" HorizontalAlignment="Center" Height="30" Margin="0,101,0,0" VerticalAlignment="Top" Width="80" Click="okerreur"/>
+        <Image Source="erreur.png" HorizontalAlignment="Left" Height="41" Margin="10,28,0,0" VerticalAlignment="Top" Width="42"/>
+
+    </Grid>
+</Window>

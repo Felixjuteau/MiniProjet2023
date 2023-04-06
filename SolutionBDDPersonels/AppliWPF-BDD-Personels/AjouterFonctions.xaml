@@ -1,0 +1,15 @@
+﻿<Window x:Class="AppliWPF_BDD_Personels.AjouterFonctions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppliWPF_BDD_Personels"
+        mc:Ignorable="d"
+        Title="AjouterFonctions" Height="250" Width="375" MaxHeight="250" MaxWidth="375">
+    <Grid>
+        <TextBox x:Name="TxtBNomFonction" HorizontalAlignment="Left" Height="23" Margin="193,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119"/>
+        <Label x:Name="LblNomFonction" Content="Nom de la fonction" HorizontalAlignment="Left" Height="25" Margin="37,45,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="BtnAjouterFonction" Content="Ajouter" HorizontalAlignment="Left" Height="42" Margin="51,147,0,0" VerticalAlignment="Top" Width="89" Click="AjouterFonction"/>
+        <Button x:Name="BtnAnnulerAjouterF" Content="Annuler" HorizontalAlignment="Left" Height="42" Margin="208,147,0,0" VerticalAlignment="Top" Width="104" Click="AnnulerAjoutF"/>
+    </Grid>
+</Window>

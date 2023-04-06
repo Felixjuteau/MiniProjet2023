@@ -1,0 +1,76 @@
+﻿<Window x:Class="AppliWPF_BDD_Personels.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppliWPF_BDD_Personels"
+        mc:Ignorable="d"
+        Title="Appli gestion personels" Height="450" Width="800" Background="MediumSlateBlue">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="31*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Height="26" Margin="486,10,0,0" VerticalAlignment="Top" Width="44" Click="Connexion" Grid.Column="1"/>
+
+        <Button x:Name="BtnTrier" Content="Trier" HorizontalAlignment="Left" Height="18" Margin="358,12,0,0" VerticalAlignment="Top" Width="81" Click="Trier" Grid.Column="1"/>
+
+        <Menu x:Name="MenuGest" HorizontalAlignment="Left" Height="27" Margin="551,9,0,0" VerticalAlignment="Top" Width="44" Grid.Column="1">
+            <MenuItem Header="Menu">
+                <MenuItem x:Name="GestionBdd" Click="GestionBdd_Click" Header="Gestion de la Bdd"></MenuItem>
+                <Separator></Separator>
+                <MenuItem x:Name="GestionFonctionsServices"  Click="GestionFonctionsServices_Click" Header="Gestion Fonctions et Services"></MenuItem>
+                <MenuItem x:Name="GestionPersonnels" Click="GestionPersonnels_Click" Header="Gestion Personnels"></MenuItem>
+                <Separator></Separator>
+                <MenuItem x:Name="Déconnexion"  Click="Déconnexion_Click" Header="Déconnexion"></MenuItem>
+                <Separator></Separator>
+                <MenuItem x:Name="FermerApp" Click="FermerApp_Click" Header="Fermer l'application">
+                    <MenuItem.Icon>
+                        <Image Source="fermerapp.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem>
+        </Menu>
+
+        <TextBox x:Name="TxtBRechercher" HorizontalAlignment="Left" Height="22" Margin="10,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Grid.Column="1"/>
+
+        <Button x:Name="BtnRecherche" Content="Rechercher" HorizontalAlignment="Left" Height="25" Margin="196,6,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.5,0.5" Click="Rechercher" Grid.Column="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.651"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+        <ListBox x:Name="LbFonction" HorizontalAlignment="Right" Height="169" Margin="0,0,4,198" VerticalAlignment="Bottom" Width="166" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1"/>
+        <ListBox x:Name="LbServices" HorizontalAlignment="Right" Height="169" Margin="0,181,4,0" VerticalAlignment="Top" Width="166" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1"/>
+
+
+        <ComboBox x:Name="CBxTypeRecherche" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="261,7,0,0" VerticalAlignment="Top" Width="74" Cursor="" SelectedIndex="0" />
+        <ListBox x:Name="ListBoxTrom" Grid.Column="1" Margin="4,6,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="606" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Height="344" VerticalAlignment="Top">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+    </Grid>
+</Window>

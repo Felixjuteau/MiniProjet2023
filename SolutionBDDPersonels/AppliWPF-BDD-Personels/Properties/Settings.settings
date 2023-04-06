@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AppliWPF_BDD_Personels.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IpServeur" Type="System.String" Scope="User">
+      <Value Profile="(Default)">172.16.32.235</Value>
+    </Setting>
+    <Setting Name="PortEcouteTCP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="NomBDD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">bddpersonnels</Value>
+    </Setting>
+    <Setting Name="UserNom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">userBDDR</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Password1234@il</Value>
+    </Setting>
+    <Setting Name="Vide" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
